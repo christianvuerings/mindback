@@ -18,7 +18,7 @@ function initTwitter(options) {
           el.textContent === "Volgend" ||
           el.textContent === "Volgers"
       )
-      .map((el) => el.closest("a").style.setProperty("display", "none"));
+      .map((el) => el.closest("a")?.style.setProperty("display", "none"));
   }
 
   if (options.twitterHideTimelineCounts) {
@@ -52,8 +52,10 @@ function initTwitter(options) {
       )
     )
       .filter((el) =>
-        ["Home", "Startpagina"].some((item) =>
-          el.parentElement.parentElement.textContent.includes(item)
+        ["Home", "Startpagina"].some(
+          (item) =>
+            el?.parentElement?.parentElement.textContent.includes(item) ||
+            el?.closest(`[aria-label*="${item}"]`)
         )
       )
       .forEach((el) => el.style.setProperty("display", "none"));
@@ -70,7 +72,7 @@ function initTwitter(options) {
           .map((item) => `[aria-label="${item}"]`)
           .join(",")
       )
-      .parentElement.style.setProperty("display", "none");
+      ?.parentElement.style.setProperty("display", "none");
   }
   if (options.twitterHideWhoToFollowSection) {
     document
@@ -93,21 +95,47 @@ function initTwitter(options) {
       .filter((el) => el.textContent.includes("See more Tweets from"))
       .map((el) => el.style.setProperty("display", "none"));
     if (foundSeeMoreTweets.length > 0) {
-      document.querySelector("html").style.setProperty("overflow", null);
+      document.querySelector("html")?.style.setProperty("overflow", null);
     }
   }
+  if (options.twitterHideSeeWhatsHappeningModal) {
+    const foundSeeWhatsHappening = Array.from(
+      document.querySelectorAll('[role="dialog"]')
+    )
+      .filter((el) => el.textContent.includes("See what’s happening"))
+      .map((el) => el.style.setProperty("display", "none"));
+    if (foundSeeWhatsHappening.length > 0) {
+      document.querySelector("html")?.style.setProperty("overflow", null);
+    }
+  }
+
   if (options.twitterHideCookiebar) {
     Array.from(document.querySelectorAll('[data-testid="BottomBar"]'))
       .filter((el) => el.textContent.toLowerCase().includes("cookie"))
       .map((el) => el.style.setProperty("display", "none"));
   }
+  if (options.twitterHidePromotedTweets) {
+    Array.from(document.querySelectorAll("span"))
+      .filter((el) => el.textContent === "Promoted")
+      .forEach((el) =>
+        el
+          .closest('[data-testid="cellInnerDiv"]')
+          .style.setProperty("display", "none")
+      );
+  }
 }
 
 async function init() {
   const options = await optionsStorage.getAll();
-  setInterval(() => {
+
+  const observer = new MutationObserver(() => {
     initTwitter(options);
-  }, 100);
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
 }
 
 init();

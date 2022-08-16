@@ -15,6 +15,7 @@ export default new OptionsSync({
     twitterHideWhoToFollowSection: true,
     // Modals
     twitterHideSeeMoreTweetsModal: true,
+    twitterHideSeeWhatsHappeningModal: true,
     // Bars
     twitterHideCookiebar: true,
     // Promoted
