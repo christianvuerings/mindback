@@ -1,7 +1,7 @@
 {
   "name": "Mindback",
-  "version": "0.0.0",
-  "description": "Use social websites mindfully by removing addicting features",
+  "version": "0.0.1",
+  "description": "Remove addicting features from social websites.",
   "homepage_url": "https://github.com/christianvuerings/mindback",
   "manifest_version": 3,
   "minimum_chrome_version": "100",
