@@ -4,8 +4,10 @@ export default new OptionsSync({
   defaults: {
     // Counts
     twitterHideFollowingFollowersCounts: true,
+    twitterHideNoticiationsTitleCount: true,
     twitterHideTimelineCounts: true,
     // Badges
+    twitterHideFaviconBadge: true,
     twitterHideNotificationsBadge: true,
     twitterHideHomeBadge: true,
     // Sections

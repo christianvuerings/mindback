@@ -25,6 +25,22 @@ function twitterHideFollowingFollowersCounts(options) {
     );
 }
 
+function twitterHideNotificationsTitleCount(options) {
+  if (options.twitterHideNoticiationsTitleCount) {
+    if (document.title.match(/^\(\d+\) /)) {
+      document
+        .querySelector("title")
+        ?.setAttribute("data-original-title", document.title);
+      document.title = document.title.replace(/^\(\d+\) /, "");
+    }
+  } else {
+    const originalTitle = document
+      .querySelector("title")
+      ?.getAttribute("data-original-title", null);
+    document.title = originalTitle ?? document.title;
+  }
+}
+
 function twitterHideTimelineCounts(options) {
   Array.from(
     document.querySelectorAll('[data-testid="app-text-transition-container"]')
@@ -34,6 +50,25 @@ function twitterHideTimelineCounts(options) {
       options.twitterHideTimelineCounts
     )
   );
+}
+
+function twitterHideFaviconBadge(options) {
+  const faviconSelector = document.querySelector("link[rel='shortcut icon']");
+  if (options.twitterHideFaviconBadge) {
+    const originalHref = faviconSelector?.getAttribute("href");
+    if (originalHref.endsWith("-pip.2.ico")) {
+      faviconSelector.setAttribute("data-original-href", originalHref);
+      faviconSelector.setAttribute(
+        "href",
+        originalHref.replace(/-pip.2.ico$/, ".ico")
+      );
+    }
+  } else {
+    const originalHref = faviconSelector.getAttribute("data-original-href");
+    if (originalHref) {
+      faviconSelector.setAttribute("href", originalHref);
+    }
+  }
 }
 
 function twitterHideNotificationsBadge(options) {
@@ -187,7 +222,9 @@ async function initTwitter() {
   const options = await optionsStorage.getAll();
 
   twitterHideFollowingFollowersCounts(options);
+  twitterHideNotificationsTitleCount(options);
   twitterHideTimelineCounts(options);
+  twitterHideFaviconBadge(options);
   twitterHideNotificationsBadge(options);
   twitterHideHomeBadge(options);
   twitterHideRelevantPeopleSection(options);
