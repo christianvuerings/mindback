@@ -22,6 +22,9 @@ export default new OptionsSync({
     twitterHideCookiebar: true,
     // Promoted
     twitterHidePromotedTweets: true,
+
+    // Feeds
+    youtubeHideHomeFeed: true,
   },
   migrations: [OptionsSync.migrations.removeUnused],
   logging: true,

@@ -4,3 +4,8 @@
 [data-mindback-display-none="true"] {
   display: none !important;
 }
+
+[data-mindback-youtube-hide-home-feed="true"]
+  .ytd-page-manager[page-subtype="home"] {
+  display: none !important;
+}
