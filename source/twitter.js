@@ -218,6 +218,12 @@ function twitterHidePromotedTweets(options) {
     );
 }
 
+function twitterHideNewTweets(options) {
+  document
+    .querySelector('[aria-label^="New Tweets are available"]')
+    ?.setAttribute("data-mindback-display-none", options.twitterHideNewTweets);
+}
+
 async function init() {
   const options = await optionsStorage.getAll();
 
@@ -235,6 +241,7 @@ async function init() {
   twitterHideSeeWhatsHappeningModal(options);
   twitterHideCookiebar(options);
   twitterHidePromotedTweets(options);
+  twitterHideNewTweets(options);
 }
 
 export default {

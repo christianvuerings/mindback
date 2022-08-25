@@ -3,7 +3,7 @@ import youtube from "./youtube.js";
 
 function initializeObserver(callback) {
   const interval = setInterval(() => {
-    if (typeof document !== "undefined") {
+    if (typeof document !== "undefined" && document?.body) {
       callback();
       const observer = new MutationObserver(callback);
 
