@@ -26,7 +26,7 @@ function twitterHideFollowingFollowersCounts(options) {
 }
 
 function twitterHideNotificationsTitleCount(options) {
-  if (options.twitterHideNoticiationsTitleCount) {
+  if (options.twitterHideNotificationsTitleCount) {
     if (document.title.match(/^\(\d+\) /)) {
       document
         .querySelector("title")

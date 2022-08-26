@@ -1,3 +1,4 @@
+import facebook from "./facebook.js";
 import twitter from "./twitter.js";
 import youtube from "./youtube.js";
 
@@ -16,16 +17,21 @@ function initializeObserver(callback) {
   }, 1);
 }
 
+function initialize(callback) {
+  chrome.storage.onChanged.addListener(callback);
+  initializeObserver(callback);
+}
+
 async function init() {
   console.log("Content script loaded for", chrome.runtime.getManifest().name);
 
-  const location = window.location.href;
-  if (location.includes("twitter.com")) {
-    chrome.storage.onChanged.addListener(twitter.init);
-    initializeObserver(twitter.init);
-  } else if (location.includes("youtube.com")) {
-    chrome.storage.onChanged.addListener(youtube.init);
-    initializeObserver(youtube.init);
+  const { host } = window.location;
+  if (host.includes("facebook.com")) {
+    initialize(facebook.init);
+  } else if (host.includes("twitter.com")) {
+    initialize(twitter.init);
+  } else if (host.includes("youtube.com")) {
+    initialize(youtube.init);
   }
 }
 

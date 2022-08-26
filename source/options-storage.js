@@ -2,9 +2,16 @@ import OptionsSync from "webext-options-sync";
 
 export default new OptionsSync({
   defaults: {
+    // Facebook
+    facebookHideNotificationsCount: true,
+    facebookHideNotificationsTitleCount: true,
+    facebookHideReactionCounts: true,
+    facebookHideGroupConversations: true,
+    facebookHideReelsAndShortVideos: true,
+
     // Twitter: Counts
     twitterHideFollowingFollowersCounts: true,
-    twitterHideNoticiationsTitleCount: true,
+    twitterHideNotificationsTitleCount: true,
     twitterHideTimelineCounts: true,
     // Badges
     twitterHideFaviconBadge: true,

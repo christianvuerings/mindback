@@ -15,6 +15,7 @@
   },
   "permissions": ["storage"],
   "host_permissions": [
+    "https://*.facebook.com/*",
     "https://twitter.com/*",
     "https://mobile.twitter.com/*",
     "https://www.youtube.com/*",
@@ -23,6 +24,7 @@
   "content_scripts": [
     {
       "matches": [
+        "https://*.facebook.com/*",
         "https://twitter.com/*",
         "https://mobile.twitter.com/*",
         "https://www.youtube.com/*",
