@@ -1,291 +1,367 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
-<title>Options</title>
+<title>Minback options</title>
 
 <form id="options-form">
-  <fieldset>
-    <legend>Facebook</legend>
-    <ul>
-      <li>
-        <input
-          type="checkbox"
-          id="facebookHideNotificationsCount"
-          name="facebookHideNotificationsCount"
-        />
-        <label for="facebookHideNotificationsCount"
-          >Hide notification count</label
-        >
-      </li>
+  <div>
+    <div class="tabs" role="tablist" aria-label="Select Mindback options">
+      <button
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-facebook"
+        id="tab-facebook"
+        tabindex="0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path
+            d="M50 2.5c-58.892 1.725-64.898 84.363-7.46 95h14.92c57.451-10.647 51.419-93.281-7.46-95z"
+            style="fill: #1877f2"
+          />
+          <path
+            d="M57.46 64.104h11.125l2.117-13.814H57.46v-8.965c0-3.779 1.85-7.463 7.781-7.463h6.021V22.101c-12.894-2.323-28.385-1.616-28.722 17.66V50.29H30.417v13.814H42.54V97.5h14.92V64.104z"
+            style="fill: #f1f1f1"
+          />
+        </svg>
+      </button>
+      <button
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-twitter"
+        id="tab-twitter"
+        tabindex="-1"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path
+            d="M96.421 21.122a38.02 38.02 0 0 1-10.941 3 19.079 19.079 0 0 0 8.373-10.537 38.18 38.18 0 0 1-12.098 4.624 19.015 19.015 0 0 0-13.901-6.017c-12.108-.162-21.417 11.667-18.552 23.385-15.829-.793-29.862-8.377-39.26-19.904-5.129 8.364-2.217 20.325 5.896 25.431-3.121-.1-6.06-.957-8.627-2.382-.119 9.305 6.482 17.161 15.279 18.914-2.703.754-5.817.872-8.602.328 2.425 7.566 9.459 13.076 17.793 13.229-7.535 6.021-18.084 9.16-28.201 7.888 40.682 25.037 85.655-7.765 83.333-48.101a38.762 38.762 0 0 0 9.508-9.858z"
+            style="fill: #00aced"
+          />
+        </svg>
+      </button>
+      <button
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-youtube"
+        id="tab-youtube"
+        tabindex="-1"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path
+            d="M94.761 27.369c-1.075-4.045-4.24-7.231-8.26-8.312C79.216 17.092 50 17.092 50 17.092s-29.216 0-36.501 1.965c-4.02 1.081-7.186 4.267-8.26 8.312C3.286 34.702 3.286 50 3.286 50s0 15.298 1.952 22.631c1.074 4.045 4.24 7.231 8.26 8.312C20.784 82.908 50 82.908 50 82.908s29.216 0 36.502-1.965c4.02-1.082 7.185-4.267 8.26-8.312C96.714 65.298 96.714 50 96.714 50s0-15.298-1.953-22.631z"
+            style="fill: red"
+          />
+          <path style="fill: #f1f1f1" d="M40.284 35.877v28.246l24.83-14.122z" />
+        </svg>
+      </button>
+    </div>
+    <div
+      id="panel-facebook"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-facebook"
+    >
+      <fieldset>
+        <legend class="visually-hidden">Facebook option</legend>
+        <ul>
+          <li>
+            <input
+              type="checkbox"
+              id="facebookHideNotificationsCount"
+              name="facebookHideNotificationsCount"
+            />
+            <label for="facebookHideNotificationsCount"
+              >Hide notification count</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="facebookHideNotificationsTitleCount"
-          name="facebookHideNotificationsTitleCount"
-        />
-        <label for="facebookHideNotificationsTitleCount"
-          >Hide title notification count</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="facebookHideNotificationsTitleCount"
+              name="facebookHideNotificationsTitleCount"
+            />
+            <label for="facebookHideNotificationsTitleCount"
+              >Hide title notification count</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="facebookHideReactionCounts"
-          name="facebookHideReactionCounts"
-        />
-        <label for="facebookHideReactionCounts">Hide reaction counts</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="facebookHideReactionCounts"
+              name="facebookHideReactionCounts"
+            />
+            <label for="facebookHideReactionCounts">Hide reaction counts</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="facebookHideGroupConversations"
-          name="facebookHideGroupConversations"
-        />
-        <label for="facebookHideGroupConversations"
-          >Hide group conversations</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="facebookHideGroupConversations"
+              name="facebookHideGroupConversations"
+            />
+            <label for="facebookHideGroupConversations"
+              >Hide group conversations</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="facebookHideReelsAndShortVideos"
-          name="facebookHideReelsAndShortVideos"
-        />
-        <label for="facebookHideReelsAndShortVideos"
-          >Hide reels and short videos</label
-        >
-      </li>
-    </ul>
-  </fieldset>
-  <fieldset>
-    <legend>Twitter</legend>
+          <li>
+            <input
+              type="checkbox"
+              id="facebookHideReelsAndShortVideos"
+              name="facebookHideReelsAndShortVideos"
+            />
+            <label for="facebookHideReelsAndShortVideos"
+              >Hide reels and short videos</label
+            >
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+    <div
+      id="panel-twitter"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-twitter"
+      hidden
+    >
+      <fieldset>
+        <legend class="visually-hidden">Twitter options</legend>
 
-    <ul>
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideFollowingFollowersCounts"
-          name="twitterHideFollowingFollowersCounts"
-        />
-        <label for="twitterHideFollowingFollowersCounts"
-          >Hide followers/following counts</label
-        >
-      </li>
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideTimelineCounts"
-          name="twitterHideTimelineCounts"
-        />
-        <label for="twitterHideTimelineCounts">Hide timeline counts</label>
-      </li>
+        <ul>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideFollowingFollowersCounts"
+              name="twitterHideFollowingFollowersCounts"
+            />
+            <label for="twitterHideFollowingFollowersCounts"
+              >Hide followers/following counts</label
+            >
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideTimelineCounts"
+              name="twitterHideTimelineCounts"
+            />
+            <label for="twitterHideTimelineCounts">Hide timeline counts</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideFaviconBadge"
-          name="twitterHideFaviconBadge"
-        />
-        <label for="twitterHideFaviconBadge">Hide favicon badge</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideFaviconBadge"
+              name="twitterHideFaviconBadge"
+            />
+            <label for="twitterHideFaviconBadge">Hide favicon badge</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideNotificationsBadge"
-          name="twitterHideNotificationsBadge"
-        />
-        <label for="twitterHideNotificationsBadge"
-          >Hide notification badge</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideNotificationsBadge"
+              name="twitterHideNotificationsBadge"
+            />
+            <label for="twitterHideNotificationsBadge"
+              >Hide notification badge</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideNotificationsTitleCount"
-          name="twitterHideNotificationsTitleCount"
-        />
-        <label for="twitterHideNotificationsTitleCount"
-          >Hide notification title count</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideNotificationsTitleCount"
+              name="twitterHideNotificationsTitleCount"
+            />
+            <label for="twitterHideNotificationsTitleCount"
+              >Hide notification title count</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideHomeBadge"
-          name="twitterHideHomeBadge"
-        />
-        <label for="twitterHideHomeBadge">Hide home badge</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideHomeBadge"
+              name="twitterHideHomeBadge"
+            />
+            <label for="twitterHideHomeBadge">Hide home badge</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideWhatsHappeningSection"
-          name="twitterHideWhatsHappeningSection"
-        />
-        <label for="twitterHideWhatsHappeningSection"
-          >Hide what's happening section</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideWhatsHappeningSection"
+              name="twitterHideWhatsHappeningSection"
+            />
+            <label for="twitterHideWhatsHappeningSection"
+              >Hide what's happening section</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideRelevantPeopleSection"
-          name="twitterHideRelevantPeopleSection"
-        />
-        <label for="twitterHideRelevantPeopleSection"
-          >Hide relevant people section</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideRelevantPeopleSection"
+              name="twitterHideRelevantPeopleSection"
+            />
+            <label for="twitterHideRelevantPeopleSection"
+              >Hide relevant people section</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideSignUpSection"
-          name="twitterHideSignUpSection"
-        />
-        <label for="twitterHideSignUpSection"
-          >Hide relevant sign up section</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideSignUpSection"
+              name="twitterHideSignUpSection"
+            />
+            <label for="twitterHideSignUpSection"
+              >Hide relevant sign up section</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideWhoToFollowSection"
-          name="twitterHideWhoToFollowSection"
-        />
-        <label for="twitterHideWhoToFollowSection"
-          >Hide relevant who to follow section</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideWhoToFollowSection"
+              name="twitterHideWhoToFollowSection"
+            />
+            <label for="twitterHideWhoToFollowSection"
+              >Hide relevant who to follow section</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideSeeMoreTweetsModal"
-          name="twitterHideSeeMoreTweetsModal"
-        />
-        <label for="twitterHideSeeMoreTweetsModal"
-          >Hide see more tweets modal</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideSeeMoreTweetsModal"
+              name="twitterHideSeeMoreTweetsModal"
+            />
+            <label for="twitterHideSeeMoreTweetsModal"
+              >Hide see more tweets modal</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideSeeWhatsHappeningModal"
-          name="twitterHideSeeWhatsHappeningModal"
-        />
-        <label for="twitterHideSeeWhatsHappeningModal"
-          >Hide see what's happening modal</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideSeeWhatsHappeningModal"
+              name="twitterHideSeeWhatsHappeningModal"
+            />
+            <label for="twitterHideSeeWhatsHappeningModal"
+              >Hide see what's happening modal</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHideCookiebar"
-          name="twitterHideCookiebar"
-        />
-        <label for="twitterHideCookiebar">Hide cookie bar</label>
-      </li>
-      <li>
-        <input
-          type="checkbox"
-          id="twitterHidePromotedTweets"
-          name="twitterHidePromotedTweets"
-        />
-        <label for="twitterHidePromotedTweets">Hide promoted tweets</label>
-      </li>
-    </ul>
-  </fieldset>
-  <fieldset>
-    <legend>Youtube</legend>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHideCookiebar"
+              name="twitterHideCookiebar"
+            />
+            <label for="twitterHideCookiebar">Hide cookie bar</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="twitterHidePromotedTweets"
+              name="twitterHidePromotedTweets"
+            />
+            <label for="twitterHidePromotedTweets">Hide promoted tweets</label>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+    <div
+      id="panel-youtube"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-you"
+      hidden
+    >
+      <fieldset>
+        <legend class="visually-hidden">Youtube options</legend>
 
-    <ul>
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideHomeFeed"
-          name="youtubeHideHomeFeed"
-        />
-        <label for="youtubeHideHomeFeed">Hide home feed</label>
-      </li>
+        <ul>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideHomeFeed"
+              name="youtubeHideHomeFeed"
+            />
+            <label for="youtubeHideHomeFeed">Hide home feed</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideShortsTab"
-          name="youtubeHideShortsTab"
-        />
-        <label for="youtubeHideShortsTab">Hide shorts tab</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideShortsTab"
+              name="youtubeHideShortsTab"
+            />
+            <label for="youtubeHideShortsTab">Hide shorts tab</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideVideoSidebar"
-          name="youtubeHideVideoSidebar"
-        />
-        <label for="youtubeHideVideoSidebar">Hide video sidebar</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideVideoSidebar"
+              name="youtubeHideVideoSidebar"
+            />
+            <label for="youtubeHideVideoSidebar">Hide video sidebar</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideComments"
-          name="youtubeHideComments"
-        />
-        <label for="youtubeHideComments">Hide video comments</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideComments"
+              name="youtubeHideComments"
+            />
+            <label for="youtubeHideComments">Hide video comments</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideLikeCount"
-          name="youtubeHideLikeCount"
-        />
-        <label for="youtubeHideLikeCount">Hide video like count</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideLikeCount"
+              name="youtubeHideLikeCount"
+            />
+            <label for="youtubeHideLikeCount">Hide video like count</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideSubscriptionBadges"
-          name="youtubeHideSubscriptionBadges"
-        />
-        <label for="youtubeHideSubscriptionBadges"
-          >Hide "new" subscription badge</label
-        >
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideSubscriptionBadges"
+              name="youtubeHideSubscriptionBadges"
+            />
+            <label for="youtubeHideSubscriptionBadges"
+              >Hide "new" subscription badge</label
+            >
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideAutoplay"
-          name="youtubeHideAutoplay"
-        />
-        <label for="youtubeHideAutoplay">Hide autoplay</label>
-      </li>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideAutoplay"
+              name="youtubeHideAutoplay"
+            />
+            <label for="youtubeHideAutoplay">Hide autoplay</label>
+          </li>
 
-      <li>
-        <input
-          type="checkbox"
-          id="youtubeHideEndscreenFeed"
-          name="youtubeHideEndscreenFeed"
-        />
-        <label for="youtubeHideEndscreenFeed">Hide video end screen feed</label>
-      </li>
-    </ul>
-  </fieldset>
+          <li>
+            <input
+              type="checkbox"
+              id="youtubeHideEndscreenFeed"
+              name="youtubeHideEndscreenFeed"
+            />
+            <label for="youtubeHideEndscreenFeed"
+              >Hide video end screen feed</label
+            >
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+  </div>
 </form>
 
 <script src="options.js" type="module"></script>

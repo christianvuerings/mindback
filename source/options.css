@@ -1,10 +1,81 @@
 html {
+  box-sizing: border-box;
   min-width: 550px;
   overflow-x: hidden; /* Required to hide horizontal scroll on Firefox */
 }
 
 * {
-  font-family: system-ui;
+  box-sizing: inherit;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* https://github.com/twbs/bootstrap/blob/1df098361cac04217d6a464c80e890c4335ecb5c/scss/mixins/_visually-hidden.scss#L8 */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important; /* Fix for https://github.com/twbs/bootstrap/issues/25686 */
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+ul {
+  margin: 8px;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 320px;
+}
+ul li {
+  margin: 8px 0;
+  position: relative;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tabs {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px;
+  padding: 0;
+  list-style: none;
+  gap: 16px;
+}
+button[role="tab"] {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+button[role="tab"] svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+}
+button[role="tab"][aria-selected="true"] {
+  filter: drop-shadow(0px 0px 5px rgb(255 255 255 / 0.25));
+}
+
+button[role="tab"][aria-selected="false"] {
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+button[role="tab"][aria-selected="false"]:hover {
+  filter: drop-shadow(0px 0px 5px rgb(255 255 255 / 0.25)) grayscale(0.5);
+  opacity: 0.8;
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
@@ -145,27 +216,4 @@ html {
   input[type="radio"]:checked {
     --s: 0.5;
   }
-}
-ul {
-  margin: 8px;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-  max-width: 320px;
-}
-ul li {
-  margin: 8px 0;
-  position: relative;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-* {
-  box-sizing: inherit;
-}
-*:before,
-*:after {
-  box-sizing: inherit;
 }

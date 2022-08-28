@@ -1,6 +1,7 @@
 [data-mindback-visibility-hidden="true"] {
   visibility: hidden !important;
 }
+
 [data-mindback-display-none="true"] {
   display: none !important;
 }
