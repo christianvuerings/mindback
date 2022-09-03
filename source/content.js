@@ -1,6 +1,7 @@
 import facebook from "./facebook.js";
 import twitter from "./twitter.js";
 import youtube from "./youtube.js";
+import getSite from "./getSite.js";
 
 function initializeObserver(callback) {
   const interval = setInterval(() => {
@@ -25,12 +26,12 @@ function initialize(callback) {
 async function init() {
   console.log("Content script loaded for", chrome.runtime.getManifest().name);
 
-  const { host } = window.location;
-  if (host.includes("facebook.com")) {
+  const site = getSite(window.location.host);
+  if (site === "facebook") {
     initialize(facebook.init);
-  } else if (host.includes("twitter.com")) {
+  } else if (site === "twitter") {
     initialize(twitter.init);
-  } else if (host.includes("youtube.com")) {
+  } else if (site === "youtube") {
     initialize(youtube.init);
   }
 }

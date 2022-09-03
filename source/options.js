@@ -1,6 +1,6 @@
 import "webext-base-css";
 import "./options.css";
-
+import getSite from "./getSite.js";
 import optionsStorage from "./options-storage.js";
 
 function changeTabs(e) {
@@ -65,9 +65,21 @@ function tabSelection() {
 }
 
 async function init() {
+  console.log("Mindback - options panel launched");
   await optionsStorage.syncForm("#options-form");
 
   tabSelection();
+
+  // Tab to select when launching the options panel
+  const currentTabUrl = (
+    await chrome.tabs.query({ active: true, lastFocusedWindow: true })
+  )?.[0]?.url;
+
+  if (currentTabUrl) {
+    const host = new URL(currentTabUrl).host;
+    const site = getSite(host);
+    document.querySelector(`#tab-${site}`)?.click();
+  }
 }
 
 init();

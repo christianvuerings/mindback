@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  min-width: 550px;
+  min-width: 350px;
   overflow-x: hidden; /* Required to hide horizontal scroll on Firefox */
 }
 
@@ -157,7 +157,7 @@ button[role="tab"][aria-selected="false"]:hover {
   }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     display: inline-block;
     vertical-align: top;

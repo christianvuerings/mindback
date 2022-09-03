@@ -1,23 +1,44 @@
 # <img src="source/icon.png" width="25" /> Mindback
 
-Browser extension to remove addicting features from social websites.
+Browser extension to remove addictive features from social websites.
 
 ## Features
 
+### Facebook
+
+- Hide notification count
+- Hide title notification count
+- Hide reaction counts
+- Hide group conversations
+- Hide reels and short videos
+
 ### Twitter
 
-- Hide following / followers counts
+- Hide followers/following counts
 - Hide timeline counts
+- Hide favicon badge
+- Hide notification badge
+- Hide notification title count
 - Hide home badge
-- Hide notifications badge
-- Hide `Relevant people` section
-- Hide `Sign up` section
-- Hide `What's happening` section
-- Hide `Who to follow` section
-- Hide `See more tweets` modal
-- Hide `See what's happening` modal
+- Hide what's happening section
+- Hide relevant people section
+- Hide relevant sign up section
+- Hide relevant who to follow section
+- Hide see more tweets modal
+- Hide see what's happening modal
 - Hide cookie bar
 - Hide promoted tweets
+
+### Youtube
+
+- Hide home feed
+- Hide shorts tab
+- Hide video sidebar
+- Hide video comments
+- Hide video like count
+- Hide "new" subscription badge
+- Hide autoplay
+- Hide video end screen feed
 
 ## Development
 
@@ -29,8 +50,6 @@ Browser extension to remove addicting features from social websites.
 ## Todo
 
 - [ ] Support languages other than English & Dutch
-- [ ] Support Facebook
-- [ ] Support Youtube
 - [ ] Support Instagram
 
 ## Credits
