@@ -13,7 +13,7 @@
   "icons": {
     "128": "icon.png"
   },
-  "permissions": ["storage", "activeTab", "tabs"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": [
     "https://*.facebook.com/*",
     "https://twitter.com/*",
