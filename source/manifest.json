@@ -1,6 +1,6 @@
 {
   "name": "Mindback",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Remove addictive features from websites such as Twitter, Facebook & Youtube.",
   "homepage_url": "https://github.com/christianvuerings/mindback",
   "manifest_version": 3,
@@ -16,6 +16,7 @@
   "permissions": ["storage", "tabs"],
   "host_permissions": [
     "https://*.facebook.com/*",
+    "https://*.instagram.com/",
     "https://twitter.com/*",
     "https://mobile.twitter.com/*",
     "https://www.youtube.com/*",
@@ -25,6 +26,7 @@
     {
       "matches": [
         "https://*.facebook.com/*",
+        "https://*.instagram.com/",
         "https://twitter.com/*",
         "https://mobile.twitter.com/*",
         "https://www.youtube.com/*",

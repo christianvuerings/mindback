@@ -1,4 +1,5 @@
 import facebook from "./facebook.js";
+import instagram from "./instagram.js";
 import twitter from "./twitter.js";
 import youtube from "./youtube.js";
 import getSite from "./getSite.js";
@@ -29,6 +30,8 @@ async function init() {
   const site = getSite(window.location.host);
   if (site === "facebook") {
     initialize(facebook.init);
+  } else if (site === "instagram") {
+    initialize(instagram.init);
   } else if (site === "twitter") {
     initialize(twitter.init);
   } else if (site === "youtube") {

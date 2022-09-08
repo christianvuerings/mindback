@@ -5,6 +5,8 @@
 export default function site(url /*: string */) {
   if (url.includes("facebook.com")) {
     return "facebook";
+  } else if (url.includes("instagram.com")) {
+    return "instagram";
   } else if (url.includes("twitter.com")) {
     return "twitter";
   } else if (url.includes("youtube.com")) {

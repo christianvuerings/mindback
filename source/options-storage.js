@@ -9,6 +9,12 @@ export default new OptionsSync({
     facebookHideGroupConversations: true,
     facebookHideReelsAndShortVideos: true,
 
+    // Instagram
+    instagramHideShorts: true,
+    instagramHideSuggestionsForYou: true,
+    instagramHideViewLikeCount: true,
+    instagramHideViewAllComments: true,
+
     // Twitter: Counts
     twitterHideFollowingFollowersCounts: true,
     twitterHideNotificationsTitleCount: true,
